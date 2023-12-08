@@ -1,0 +1,261 @@
+:root {
+  --Purple: hsl(259, 100%, 65%);
+  --Light-red: hsl(0, 100%, 67%);
+
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 8%);
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/assets/fonts/Poppins-Bold.ttf");
+}
+
+.fadeOne{
+  animation: fade-in-right 1.8s ease-out;
+}
+.fadeTwo{
+  animation: fade-in-left 2s ease-out
+}
+
+@keyframes fade-in-right {
+  from{
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fade-in-left {
+  from{
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--Off-white);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem auto;
+  height: 870px;
+}
+body h3 {
+  font-size: 0.8rem;
+  font-size: 500;
+  padding: 8px;
+}
+body h3 > b {
+  color: var(--Purple);
+  font-size: 1rem;
+}
+
+main {
+  max-width: 760px;
+  min-width: 320px;
+  width: 100%;
+  background: var(--White);
+  padding: 40px;
+  border-radius: 10px 10px 32% 10px;
+  margin: 2rem auto;
+}
+main h2 {
+  font-size: 5rem;
+  font-weight: 800;
+  font-style: italic;
+}
+main .colorize {
+  color: var(--Purple);
+}
+
+form ul {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+form li {
+  position: relative;
+}
+form label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--Smokey-grey);
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+}
+form input {
+  display: block;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 20px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid var(--Light-grey);
+}
+form input:hover {
+  border-color: var(--Smokey-grey);
+}
+form input:focus {
+  border-color: var(--Purple);
+}
+form input::placeholder {
+  font-weight: 700;
+  color: var(--Smokey-grey);
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.error{
+    color: var(--Light-red);
+    position: absolute;
+    bottom: -28px;
+    left: 0;
+    font-style: 400;
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+.divide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.6rem auto;
+}
+.divide hr {
+  width: 100%;
+}
+.divide .submit-btn {
+  position: relative;
+  background-color: var(--Purple);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  padding: 40px;
+  outline: none;
+  border: 0;
+  transition: all 0.3s ease-out;
+}
+.divide .submit-btn:hover {
+  background-color: var(--Off-black);
+}
+.divide .submit-btn img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2rem;
+}
+
+@media(max-width: 740px){
+  main {
+    width: 90%;
+    padding: 20px;
+  }
+  main h2 {
+    font-size: 5rem;
+  }
+  form ul {
+    width: 100%;
+    justify-content: center;
+  }
+  .divide{
+    margin: 6rem auto 1.2rem auto;
+  }
+  .divide .submit-btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+@media(max-width: 598px){
+  main h2 {
+    font-size: 4rem;
+  }
+}
+@media(max-width: 550px){
+  .error{
+    font-size: 12px;
+}
+}
+@media(max-width: 510px){
+  main {
+    border-radius: 20px 20px 28% 20px;
+  }
+  main h2 {
+    font-size: 4rem;
+  }
+  form input {
+    font-size: 1.4rem;
+  }
+  form input::placeholder {
+    font-size: 1.8rem;
+  }
+}
+@media(max-width: 480px){
+  body h3 {
+    font-size: 0.6rem;
+  }
+  body h3 > b {
+    font-size: 0.8rem;
+  }
+  form input::placeholder {
+    font-size: 1.5rem;
+  }
+  .error{
+    bottom: -22px;
+    font-size: 11px;
+}
+}
+@media(max-width: 430px){
+  main h2 {
+    font-size: 2.8rem;
+  }
+  form input {
+    padding: 10px;
+  }
+  form input::placeholder {
+    font-size: 1.3rem;
+  }
+  .divide .submit-btn {
+    width: 1.4rem;
+    height: 1.4rem;
+    padding: 30px;
+  }
+  .divide .submit-btn img {
+    width: 1.6rem;
+  }
+}
